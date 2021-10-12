@@ -572,9 +572,9 @@ function funCheck()
         whiptail --title "Unable to Detect Dokku" --msgbox "If you want to install your app using t2d, it is mandatory to install Dokku. OK to continue." 10 60
         wait
         echo "${YELLOW}Downloading Dokku from its Official Repository${END}"
-        wget https://raw.githubusercontent.com/dokku/dokku/v0.25.7/bootstrap.sh
+        wget https://raw.githubusercontent.com/dokku/dokku/v0.24.10/bootstrap.sh
         wait
-        sudo DOKKU_TAG=v0.25.7 bash bootstrap.sh &
+        sudo DOKKU_TAG=v0.24.10 bash bootstrap.sh &
         process_id=$!
         wait $process_id
         echo "Exit status: $?"
