@@ -1,5 +1,22 @@
 # Forem installation script using Dokku.
+
+## How to use
+```
+ssh -i <path-to-your-ssh-key> root@<your-VM-IP-address>
+wget https://raw.githubusercontent.com/huydhoang/t2d/master/whip-dokku.sh
+bash whip-dokku.sh
+```
+
+## To add new ENV vars
+```bash
+bash whip-dokku.sh
+# Choose <Skip>
+# Choose Update Existing App
+# Enter new ENV vars
+dokku ps:restart nforem
+```
 ---
+# Original README
 ## What is t2d?
 t2d aka Talk to Dokku; is a beautiful Terminal User Interface(TUI) powered by dokku. With t2d you will be able to deploy apps in most popular programming languages, link them to most popular databases and all that with almost zero configuration from your side. Apart from all these amazing features it will also save you money along the way.
 
@@ -30,8 +47,8 @@ and link them to any of these databases:
 
 In other words, if your application can run in Heroku, it is always possible to make it up and running in Dokku; t2d stands as a medium for you to talk with dokku and configure your app, within your terminal.
 
-# Quick Start Instructions
-### Downlaod the Latest t2d Script
+## Quick Start Instructions
+### Download the Latest t2d Script
 ```
 wget https://raw.githubusercontent.com/huydhoang/t2d/master/whip-dokku.sh
 ```
