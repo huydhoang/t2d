@@ -160,7 +160,7 @@ function funUpdateapp()
         "2)")
             if [[ "$APP" == nforem ]];
             then
-                dokku git:sync --build nforem https://github.com/akhil-naidu/forem.git
+                dokku git:sync --build nforem https://github.com/forem/forem.git
                 wait
                 result="Let me know, if you find any errors or need updates to the script"
             else
@@ -453,7 +453,7 @@ function funForem()
     wait
     dokku git:set nforem deploy-branch main
     wait
-    dokku git:sync --build nforem https://github.com/akhil-naidu/forem.git
+    dokku git:sync --build nforem https://github.com/forem/forem.git
     wait 
     echo "${GREEN}There you go :), Leave a like if you successfully configured your Forem${END}" 
 }
@@ -569,12 +569,12 @@ function funCheck()
     else
         echo "${RED}Dokku does not exist${END}"
         # Show messagebox and make it mandatory to download and install dokku
-        whiptail --title "Unable to Detect Dokku" --msgbox "If you want to insatll your app using t2d, it is madatory to install Dokku. So, I would like to install Dokku on behalf of you." 10 60
+        whiptail --title "Unable to Detect Dokku" --msgbox "If you want to install your app using t2d, it is mandatory to install Dokku. OK to continue." 10 60
         wait
         echo "${YELLOW}Downloading Dokku from its Official Repository${END}"
-        wget https://raw.githubusercontent.com/dokku/dokku/v0.24.10/bootstrap.sh
+        wget https://raw.githubusercontent.com/dokku/dokku/v0.25.7/bootstrap.sh
         wait
-        sudo DOKKU_TAG=v0.24.10 bash bootstrap.sh &
+        sudo DOKKU_TAG=v0.25.7 bash bootstrap.sh &
         process_id=$!
         wait $process_id
         echo "Exit status: $?"
